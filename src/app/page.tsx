@@ -482,15 +482,16 @@ export default function Home() {
               clipPath: 'polygon(0 0, 100% 0, 60% 100%, 0 100%)'
             }}></div>
 
-            {/* Grid Overlay (Covers both land and water) */}
+            {/* Grid Overlay - behind circles */}
             <div className="absolute inset-0 pointer-events-none" style={{
               backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px)',
-              backgroundSize: '96px 96px'
+              backgroundSize: '96px 96px',
+              zIndex: 1
             }}></div>
 
-            {/* Highlights */}
-            <div className="absolute top-[45%] left-[34%] w-24 h-24 bg-[#CDE0B6] rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute top-[58%] right-[18%] w-32 h-32 bg-[#CDE0B6] rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+            {/* Highlights - above grid */}
+            <div className="absolute top-[45%] left-[34%] w-24 h-24 bg-[#CDE0B6] rounded-full transform -translate-x-1/2 -translate-y-1/2" style={{zIndex: 2}}></div>
+            <div className="absolute top-[58%] right-[18%] w-32 h-32 bg-[#CDE0B6] rounded-full transform -translate-x-1/2 -translate-y-1/2" style={{zIndex: 2}}></div>
 
             {/* Controls */}
             <button className="absolute top-5 left-5 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.15)] hover:bg-gray-50 transition">
